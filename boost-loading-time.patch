@@ -1,0 +1,11 @@
+--- node_modules/@nestjs/core/injector/module-token-factory.js	2021-11-30 16:24:44.000000000 +0800
++++ node_modules/@nestjs/core/injector/module-token-factory2.js	2021-11-30 16:24:30.000000000 +0800
+@@ -22,7 +22,7 @@
+         // The replacer function is also required in order to obtain real class names
+         // instead of the unified "Function" key
+         return dynamicModuleMetadata
+-            ? fast_safe_stringify_1.default(dynamicModuleMetadata, this.replacer)
++            ? fast_safe_stringify_1.default(dynamicModuleMetadata, this.replacer, 1, { depthLimit:5 })
+             : '';
+     }
+     getModuleId(metatype) {
